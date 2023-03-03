@@ -1,5 +1,5 @@
 <?php
-$message = "Bienvenue sur notre site sécurisé. Veuillez entrer votre mot de passe pour accéder à votre compte.";
+$message = "Bienvenue ! Veuillez entrer votre mot de passe pour accéder à votre compte.";
 $alert_type = "success";
 
 if ( isset( $_GET['submit'] ) ) {
@@ -19,6 +19,7 @@ if ( isset( $_GET['submit'] ) ) {
 } else {
     $message = "Le mot de passe est valide.";
     $alert_type = "success";
+    $validation = $password;
 }
 // echo '<h3>Informations récupérées en utilisant GET</h3>';
 // echo 'MDP : '. $password;
@@ -55,6 +56,7 @@ if ( isset( $_GET['submit'] ) ) {
     </div>
     <div class="alert alert-<?= $alert_type ?>" role="alert">
       <?= $message ?>
+      <h5><?= $validation ?? ''?></h5>
     </div>
   </form>
 
